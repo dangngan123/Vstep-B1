@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học Tiếng Anh B1 - 41 Chủ Đề Giao Tiếp</title>
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #dee2e6;
+            --header-bg: #343a40;
+            --header-text: #fff;
+            --keyword-color: #c7254e;
+            --keyword-bg: #f9f2f4;
+            --keyword-block-bg: #f7f7f9;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            background-color: #e9ecef;
+            color: var(--text-color);
+        }
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .sidebar {
+            width: 280px;
+            background: var(--secondary-color);
+            padding: 1rem;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            position: sticky;
+            top: 70px; /* Bằng chiều cao header */
+            border-right: 1px solid var(--border-color);
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li a {
+            display: block;
+            color: var(--text-color);
+            padding: 0.6rem 0.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar ul li a:hover, .sidebar ul li a.active-topic {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 2rem;
+        }
+        section {
+            background-color: #fff;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            scroll-margin-top: 80px; /* Để không bị header che */
+        }
+        section h2 {
+            margin-top: 0;
+            color: var(--header-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+        .qa-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .qa-question {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+        .qa-question::after {
+            content: '+';
+            position: absolute;
+            right: 1rem;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .qa-question.active {
+            background-color: #e2e6ea;
+        }
+        .qa-question.active::after {
+            transform: rotate(45deg);
+        }
+        .qa-answer {
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+            display: none; /* Ẩn câu trả lời ban đầu */
+        }
+        .keywords {
+            background-color: var(--keyword-block-bg);
+            border-left: 5px solid var(--primary-color);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            font-style: normal;
+        }
+        .keywords strong {
+            color: #333;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .keywords code {
+            color: var(--keyword-color);
+            background-color: var(--keyword-bg);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
+        }
+        .translation {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border-color);
+            color: #6c757d;
+        }
+        .translation strong {
+            color: #495057;
+        }
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            header, .sidebar {
+                position: static;
+            }
+            section {
+                scroll-margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Học Tiếng Anh B1 - 41 Chủ Đề Giao Tiếp</h1>
+    </header>
+
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Chủ đề</h2>
+            <ul>
+                <li><a href="#topic-1">1. Food</a></li>
+                <li><a href="#topic-2">2. Transport</a></li>
+                <li><a href="#topic-3">3. Internet</a></li>
+                <li><a href="#topic-4">4. Hometown</a></li>
+                <li><a href="#topic-5">5. Traveling</a></li>
+                <li><a href="#topic-6">6. Jobs</a></li>
+                <li><a href="#topic-7">7. Sports</a></li>
+                <li><a href="#topic-8">8. Fashion</a></li>
+                <li><a href="#topic-9">9. English (Phần 1)</a></li>
+                <li><a href="#topic-10">10. English (Phần 2)</a></li>
+                <li><a href="#topic-11">11. Communication</a></li>
+                <li><a href="#topic-12">12. Health</a></li>
+                <li><a href="#topic-13">13. Place of living</a></li>
+                <li><a href="#topic-14">14. Family relationships</a></li>
+                <li><a href="#topic-15">15. Pets</a></li>
+                <li><a href="#topic-16">16. Sicknesses</a></li>
+                <li><a href="#topic-17">17. Birthdays</a></li>
+                <li><a href="#topic-18">18. Traffic</a></li>
+                <li><a href="#topic-19">19. Festivals</a></li>
+                <li><a href="#topic-20">20. Friends</a></li>
+                <li><a href="#topic-21">21. Handicrafts</a></li>
+                <li><a href="#topic-22">22. Music</a></li>
+                <li><a href="#topic-23">23. Cooking</a></li>
+                <li><a href="#topic-24">24. Reading books</a></li>
+                <li><a href="#topic-25">25. Watching TV</a></li>
+                <li><a href="#topic-26">26. Weather</a></li>
+                <li><a href="#topic-27">27. Travelling by planes</a></li>
+                <li><a href="#topic-28">28. Disadvantages of planes</a></li>
+                <li><a href="#topic-29">29. Hobbies</a></li>
+                <li><a href="#topic-30">30. Meals</a></li>
+                <li><a href="#topic-31">31. Shopping</a></li>
+                <li><a href="#topic-32">32. Fastfood</a></li>
+                <li><a href="#topic-33">33. Drinks</a></li>
+                <li><a href="#topic-34">34. Flowers</a></li>
+                <li><a href="#topic-35">35. Friends (Lần 2)</a></li>
+                <li><a href="#topic-36">36. Films</a></li>
+                <li><a href="#topic-37">37. Living far away from home</a></li>
+                <li><a href="#topic-38">38. Why women wait to marry</a></li>
+                <li><a href="#topic-39">39. How to keep calm in exams</a></li>
+                <li><a href="#topic-40">40. Daily routines</a></li>
+                <li><a href="#topic-41">41. Benefits of retirement</a></li>
+            </ul>
+        </nav>
+
+        <main class="content">
+            <h2>Chào</h2>
+            <p>Good morning teacher. I hope you're having a good day. My name is Ngân. I am twenty-two years old, and I am a student at Tra Vinh University.</p>
+
+            <section id="topic-1">
+                <h2>Topic 1: Food (Thức ăn)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What is your favourite food?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>Banh Mi</code>, <code>delicious</code> (ngon), <code>nutri'tious</code> (bổ dưỡng), <code>cheap</code> (rẻ), <code>convenient</code> (tiện lợi).</p>
+                        <p>To be honest, my favourite food is Banh Mi . Because it is delicious, nutritious, and cheap. Moreover, it is very convenient to take away on a busy morning.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, món ăn yêu thích của tôi là Bánh Mì, vì nó ngon, bổ dưỡng và rẻ. Hơn nữa, nó rất tiện lợi để mang đi vào mỗi buổi sáng bận rộn.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you prefer home-made food or takeaway food?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer eating at home</code> (thích ăn ở nhà), <code>keep healthy</code> (giữ gìn sức khỏe), <code>necessary skill</code> (kỹ năng cần thiết).</p>
+                        <p>Honestly speaking, I prefer eating at home to eating out, because it helps me keep healthy. Moreover, I think cooking is a necessary skill for me to live far away from home.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Nói thật thì tôi thích ăn ở nhà hơn đi ăn ngoài, vì điều đó giúp tôi giữ gìn sức khỏe. Hơn nữa, tôi nghĩ nấu ăn là một kỹ năng cần thiết để sống xa nhà.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">3. What’s your favourite meal of the day?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>lunchtime</code> (bữa trưa), <code>with my family</code> (với gia đình), <code>improve family relationships</code> (cải thiện quan hệ gia đình).</p>
+                        <p>I would say that my favourite meal of the day is lunch, because I’m into lunchtime with my family. Moreover, it helps to improve family relationships.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng bữa ăn yêu thích trong ngày của tôi là bữa trưa, vì tôi thích ăn trưa cùng gia đình. Hơn nữa, nó giúp cải thiện mối quan hệ gia đình.</div>
+                    </div>
+                </div>
+            </section>
+            <section id="topic-2">
+                <h2>Topic 2: Transport (Giao thông)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. What is your favourite transport?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>bikes</code> (xe đạp), <code>inexpensive</code> (rẻ), <code>save money</code> (tiết kiệm), <code>easy to move</code> (dễ di chuyển), <code>exercise</code> (tập thể dục).</p>
+                        <p>To be honest, I have a great(i) liking for bikes, because it’s ex.tre'mely inexpensive for me to save a lot of money. Moreover, this is a good way to ex'ercise every day to improve my health.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi rất thích xe đạp, vì nó cực kỳ rẻ giúp tôi tiết kiệm được nhiều tiền. Hơn nữa, đây là một cách tốt để tập thể dục mỗi ngày nhằm cải thiện sức khỏe.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. Do you usually use public transport?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>sometimes</code> (thỉnh thoảng), <code>use buses</code> (dùng xe buýt), <code>visit my parents</code> (thăm bố mẹ), <code>avoid bad weather</code> (tránh thời tiết xấu).</p>
+                        <p>I would say that I sometimes use buses, because I need to come back home at weekends to visit my parents. Moreover, it helps me to avoid bad weather.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng tôi thỉnh thoảng có đi xe buýt, vì tôi cần về nhà vào cuối tuần để thăm bố mẹ. Hơn nữa, nó giúp tôi tránh được thời tiết xấu.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">3. Tell me some suggestions to improve travel and vehicles in your country?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>use transport which runs on electricity</code> (dùng xe điện), <code>electric cars</code>, <code>subways</code>, <code>eco-friendly</code> (thân thiện môi trường).</p>
+                        <p>In my opinion, we should use transport which runs on electricity, such as electric cars or subways. because they are very eco-friendly and help protect the environment.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Theo tôi, chúng ta nên sử dụng các phương tiện chạy bằng điện, như ô tô điện hay tàu điện ngầm, vì chúng rất thân thiện với môi trường và giúp bảo vệ môi trường.</div>
+                    </div>
+                </div>
+            </section>
+            <section id="topic-3">
+                <h2>Topic 3: Internet</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. How often do you use the Internet?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>spend 2 hours</code> (dành 2 tiếng), <code>develop knowledge</code> (phát triển kiến thức), <code>recharge batteries</code> (nạp năng lượng).</p>
+                        <p>To be honest, I spend about 2 hours using the Internet every day, because I use it to develop my knowledge about the world. Moreover, I also watch films and listen to music to recharge my batteries after school.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi dành khoảng 2 tiếng mỗi ngày để sử dụng Internet, vì tôi dùng nó để phát triển kiến thức về thế giới. Hơn nữa, tôi cũng xem phim và nghe nhạc để nạp lại năng lượng sau giờ học.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What is your favourite website?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>Youtube.com</code>, <code>study everything</code> (học mọi thứ), <code>cultures</code> (văn hóa), <code>society</code> (xã hội).</p>
+                        <p>You know, my favorite website is Youtube.com, because I can study everything on this website. Moreover, I can learn about different cultures, society, and customs.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, trang web yêu thích của tôi là Youtube.com, vì tôi có thể học mọi thứ trên trang này. Hơn nữa, tôi có thể tìm hiểu về các nền văn hóa, xã hội và phong tục khác nhau.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Tell me some disadvantages of the Internet?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>not good for our health</code> (không tốt cho sức khỏe), <code>leak personal information</code> (rò rỉ thông tin), <code>consume much time</code> (tốn thời gian).</p>
+                        <p>I would say that the Internet has some disadvantages. because using it for a long time is not good for our health. Moreover, it can be easy to leak personal information and it consumes a lot of our time for physical activities.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi cho rằng Internet có một số nhược điểm, vì sử dụng nó trong thời gian dài không tốt cho sức khỏe của chúng ta. Hơn nữa, nó có thể dễ bị rò rỉ thông tin cá nhân và làm mất nhiều thời gian cho các hoạt động thể chất.</div>
+                    </div>
+                </div>
+            </section>
+            <section id="topic-4">
+                <h2>Topic 4: Hometown (Quê hương)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Where is your hometown?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>Tra Vinh City</code>, <code>famous for</code> (nổi tiếng về), <code>Ba Om Lake</code>, <code>Ok Om Bok festival</code>, <code>tasty food</code>.</p>
+                        <p>To be honest, I've been living in Tra Vinh City, a small but really beautiful place. It's famous for Ba Om Lake, Ok Om Bok festival, and lots of tasty food like Bun Nuoc Leo.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi đang sống ở Thành phố Trà Vinh, một nơi nhỏ bé nhưng rất đẹp. Nơi đây nổi tiếng với Ao Bà Om, Lễ hội Ok Om Bok và rất nhiều món ăn ngon như Bún Nước Lèo.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. What do people usually do when visiting your hometown?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>take photos</code>, <code>Ba Om Lake</code>, <code>enjoy local food</code>, <code>go to coffee shops</code>.</p>
+                        <p>When visiting my hometown, people do many activities. In the morning, they usually take photos to keep memories in Ba Om Lake. Moreover, in the afternoon, they often enjoy local food like Bun Nuoc Leo.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Khi đến thăm quê tôi, mọi người làm rất nhiều hoạt động. Vào buổi sáng, họ thường chụp ảnh để lưu giữ kỷ niệm ở Ao Bà Om. Hơn nữa, vào buổi chiều, họ thường thưởng thức món ăn địa phương như Bún Nước Lèo.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">3. Do you prefer living in a big city or in the countryside?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>countryside</code> (nông thôn), <code>people are lovely</code> (người dân dễ thương), <code>cost of living is low</code> (chi phí sinh hoạt thấp).</p>
+                        <p>I would say that I prefer living in the countryside to a big city, because people are lovely and friendly. Moreover, the cost of living is low.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng tôi thích sống ở nông thôn hơn thành phố lớn, vì người dân ở đây đáng yêu và thân thiện. Hơn nữa, chi phí sinh hoạt lại thấp.</div>
+                    </div>
+                </div>
+            </section>
+            <section id="topic-5">
+                <h2>Topic 5: Traveling (Du lịch)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. When do the Vietnamese usually have holidays?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>holidays</code>, <code>weekends</code>, <code>summer breaks</code>, <code>Independence Day</code>, <code>Tet holiday</code>/<code>Lunar New Year</code>.</p>
+                        <p>I believe that Vietnamese individuals typically experience holidays during weekends, summer breaks, or major holidays like Independence Day or Tet holiday at the end of the year.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi tin rằng người Việt Nam thường có những kỳ nghỉ vào các ngày cuối tuần, kỳ nghỉ hè, hoặc các ngày lễ lớn như ngày Quốc khánh hay đặc biệt là kỳ nghỉ Tết Nguyên đán vào cuối năm.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. Do you like traveling? & Where do you like to travel?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>big fan of travelling</code>, <code>Da Nang beach</code>, <code>with my family</code>, <code>improve... family relationships</code>.</p>
+                        <p>To be honest, I'm a big fan of travelling to Da Nang beach with my family on my holiday. because it helps me to improve my family relationships. Moreover, I can enjoy fresh and delicious seafood there.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi rất thích đi du lịch đến bãi biển Đà Nẵng cùng gia đình trong những ngày nghỉ, vì điều này giúp cải thiện mối quan hệ trong gia đình. Hơn nữa, tôi có thể thưởng thức hải sản tươi ngon ở đó.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. What do you like doing on your trip?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>take part in outdoors</code> (tham gia hoạt động ngoài trời), <code>taking photos</code>, <code>swimming</code>, <code>playing beach volleyball</code>, <code>buy souvenirs</code>.</p>
+                        <p>On my trip, I think it’s a good way to take part in outdoors activities like taking photos, swimming or playing beach volleyball. Moreover, this is a good chance for me to buy souvenirs and specialties for my friends and relatives.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Trong chuyến đi, tôi nghĩ đó là cách tuyệt vời để tham gia các hoạt động ngoài trời như chụp ảnh, bơi lội hay chơi bóng chuyền biển. Hơn nữa, đây cũng là cơ hội tốt để tôi mua các đặc sản và quà lưu niệm cho bạn bè và người thân.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-6">
+                <h2>Topic 6: Jobs (Công việc)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you work or study?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>studying medicine</code> (học ngành Y), <code>TV university</code> (Đại học TV), <code>second-year student</code> (sinh viên năm hai).</p>
+                        <p>To be honest, I’ve been studying medicine at TV university as a second-year student. You know, I choose this major because I want to make money to help my family and travel overseas.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi đang là sinh viên năm hai ngành Y tại trường Đại học TV. Bạn biết đấy, tôi chọn ngành này vì tôi muốn kiếm tiền để giúp đỡ gia đình và du lịch nước ngoài.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What do you like about your job/study?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>bring medical care</code> (mang lại sự chăm sóc y tế), <code>treat serious illnesses</code> (điều trị bệnh nặng), <code>less fortunate</code> (người kém may mắn), <code>teachers and classmates always give me a hand</code> (thầy cô và bạn bè luôn giúp đỡ).</p>
+                        <p>The thing I like is that I can bring medical care for the less fortunate and treat serious illnesses for them. Moreover, my teachers and classmates always give me a hand when I meet problems, and this is the thing I like best.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Điều tôi thích là tôi có thể mang lại sự chăm sóc y tế cho những người kém may mắn và điều trị những căn bệnh hiểm nghèo cho họ. Hơn nữa, thầy cô và bạn bè trong lớp luôn sẵn sàng giúp đỡ tôi khi tôi gặp vấn đề, và đây là điều tôi thích nhất.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Is there anything you dislike about your job/study?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>dislike</code> (không thích), <code>not my cup of tea</code> (không phải sở thích của tôi), <code>many exams at weekends</code> (nhiều kỳ thi vào cuối tuần), <code>don’t have much time for my family</code> (không có nhiều thời gian cho gia đình).</p>
+                        <p>However, I would say that there’s an only thing I don’t like about my school. The thing that is not my cup of tea is that many teachers usually schedule some exams at weekends, so I don’t have much time for my family and my personal relaxation.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tuy nhiên, tôi muốn nói rằng có một điều duy nhất tôi không thích về trường của mình. Điều mà tôi không thích là giáo viên thường xuyên sắp xếp nhiều lịch thi vào cuối tuần, nên tôi không có nhiều thời gian cho gia đình và thư giãn cá nhân.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-7">
+                <h2>Topic 7: Sports (Thể thao)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What sports or physical exercise do you often do?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>swimming</code> (bơi lội), <code>reduce stress</code> (giảm stress), <code>recharge my batteries</code> (nạp năng lượng), <code>keep fit</code> (giữ dáng).</p>
+                        <p>To be honest, I’m a big fan of sports, especially swimming. because It allows me to reduce stress and recharge my batteries after school. Moreover, this is a good way to improve my well-being and keep fit.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi là một người hâm mộ thể thao, đặc biệt là bơi lội, vì nó cho phép tôi giảm căng thẳng và nạp lại năng lượng sau giờ học. Hơn nữa, đây là một cách tốt để cải thiện sức khỏe và giữ dáng.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you prefer watching or playing sports?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer playing sports</code> (thích chơi thể thao), <code>understand the spirit of teamwork</code> (hiểu tinh thần đồng đội), <code>feeling of a winner</code> (cảm giác của người chiến thắng).</p>
+                        <p>I would say that I prefer playing sports rather than just watching these games. because I want to understand the spirit of teamwork. Moreover, I wanna reach the feeling of a winner.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng tôi thích chơi thể thao hơn là chỉ xem các trận đấu, vì tôi muốn hiểu được tinh thần đồng đội. Hơn nữa, tôi muốn cảm nhận được cảm giác của người chiến thắng.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. What is the most popular sport in your country?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>many people like</code> (nhiều người thích), <code>swimming</code> (bơi lội), <code>others are crazy about</code> (người khác thì mê), <code>football</code> (bóng đá).</p>
+                        <p>In my country, many people like swimming. Moreover, others are crazy about football.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Ở nước tôi, nhiều người thích bơi lội. Hơn nữa, những người khác thì lại mê bóng đá.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-8">
+                <h2>Topic 8: Fashion (Thời trang & Giày dép)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What kind of clothes do you usually wear?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>blue Jeans</code>, <code>white shirts</code>, <code>relaxing</code> (thoải mái), <code>convenient to move</code> (tiện di chuyển), <code>not too expensive</code> (không quá đắt).</p>
+                        <p>To be honest, I’m a big fan of blue Jeans paired with white shirts. because I find it relaxing and convenient to move around. Moreover, this outfit is easy to buy and not too expensive.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật sự, tôi là một người hâm mộ quần jeans xanh kết hợp với áo sơ mi trắng, vì tôi thấy nó thoải mái và thuận tiện để di chuyển. Hơn nữa, trang phục này dễ mua và không quá đắt đỏ.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What is your favourite color of shoes?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>black</code> (màu đen), <code>relaxing</code> (thoải mái), <code>convenient</code> (tiện lợi), <code>fit with other clothes</code> (hợp với đồ khác).</p>
+                        <p>You know, I prefer wearing shoes in black. because I find them relaxing and convenient to move around. Moreover, shoes in black can fit with other clothes easily.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, tôi thích mang giày màu đen, vì tôi thấy chúng thoải mái và tiện lợi để di chuyển. Hơn nữa, chúng có thể phối với các trang phục khác một cách dễ dàng.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you prefer wearing shoes or sandals?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer wearing shoes</code> (thích mang giày), <code>not too expensive</code> (không quá đắt), <code>for students</code> (cho sinh viên).</p>
+                        <p>I would say that I prefer wearing shoes to sandals. because I find them more convenient for daily activities. Moreover, shoes are not too expensive for students like me.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng tôi thích mang giày hơn dép sandal, vì tôi thấy chúng tiện lợi hơn cho các hoạt động hàng ngày. Hơn nữa, chúng không quá đắt, đặc biệt là đối với sinh viên.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-9">
+                <h2>Topic 9: English (Phần 1)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What is your favourite subject?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>English</code>, <code>holds a great place in my heart</code> (chiếm vị trí quan trọng).</p>
+                        <p>To be honest, among various subjects I’ve been studying, English holds a great place in my heart. because it opens up a door for me to develop knowledge about the world. Moreover, I can make friends with foreigners.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, trong số các môn tôi đã học, tiếng Anh chiếm một vị trí đặc biệt trong tim tôi, vì nó mở ra một cánh cửa để tôi phát triển kiến thức về thế giới. Hơn nữa, tôi có thể kết bạn với người nước ngoài.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you think that English is important?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>necessary</code> (cần thiết), <code>work for multinational companies</code> (làm cho công ty đa quốc gia), <code>high incomes</code> (thu nhập cao), <code>travel overseas</code> (du lịch nước ngoài).</p>
+                        <p>Yes, I think English is very necessary. because it is a good way to get a job in multinational companies with high incomes. Moreover, it allows me to travel overseas to unwind.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi nghĩ tiếng Anh rất cần thiết, vì đó là một cách tốt để có việc làm trong các công ty đa quốc gia với thu nhập cao. Hơn nữa, nó cho phép tôi đi du lịch nước ngoài để thư giãn.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. How do you do to make your English better?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>listen to music</code>, <code>watch films</code>, <code>communicate with foreigners</code> (giao tiếp với người nước ngoài), <code>take part in English clubs</code> (tham gia CLB tiếng Anh).</p>
+                        <p>In my opinion, there are a lot of ways to improve English skills. For example, you should listen to music and watch films in English everyday. Moreover, it’s advisable to communicate with foreigners and take part in English clubs at school.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Theo tôi, có rất nhiều cách để cải thiện kỹ năng tiếng Anh. Ví dụ, bạn nên nghe nhạc và xem phim bằng tiếng Anh mỗi ngày. Hơn nữa, bạn nên giao tiếp với người nước ngoài và tham gia các câu lạc bộ tiếng Anh ở trường.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-10">
+                <h2>Topic 10: English (Phần 2)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. How many languages can you speak?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>speak Vietnamese</code> (nói tiếng Việt), <code>my first language</code> (tiếng mẹ đẻ), <code>a little bit English</code> (một chút tiếng Anh).</p>
+                        <p>To be honest, I can speak Vietnamese, which is my first language. Moreover, I can speak a little bit of English, but I'm not very good.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi có thể nói tiếng Việt, đó là tiếng mẹ đẻ của tôi. Hơn nữa, tôi có thể nói một chút tiếng Anh, nhưng không giỏi lắm.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. How long have you been learning English?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>for 10 years</code> (khoảng 10 năm), <code>a decade</code> (một thập kỷ).</p>
+                        <p>Let me see, I've been studying English for 10 years, or a decade. I started learning it in primary school and I'm still learning it now at university.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Để tôi xem, tôi đã học tiếng Anh được 10 năm, tức là một thập kỷ rồi. Tôi bắt đầu học nó từ hồi tiểu học và bây giờ vẫn đang học ở trường đại học.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. What do you think is the most difficult when learning English?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>too difficult</code> (quá khó), <code>vocabulary</code> (từ vựng), <code>grammar rules</code> (quy tắc ngữ pháp), <code>pronunciation</code> (phát âm).</p>
+                        <p>You know, I think English is too difficult to master, because there are a lot of vocabulary and grammar rules that I cannot remember. Moreover, the pronunciation of English isn't similar to Vietnamese, so sometimes I cannot understand what foreigners say.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, tôi nghĩ tiếng Anh quá khó để thành thạo, vì có rất nhiều từ vựng và quy tắc ngữ pháp mà tôi không thể nhớ hết. Hơn nữa, phát âm tiếng Anh không giống tiếng Việt, nên đôi khi tôi không thể hiểu người nước ngoài nói gì.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-11">
+                <h2>Topic 11: Communication (Giao tiếp)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you usually keep in touch with your family by making phone calls?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>phone my parents everyday</code> (gọi cho bố mẹ mỗi ngày), <code>in the evenings</code> (vào buổi tối), <code>finished my homework</code> (làm xong bài tập), <code>much time to talk</code> (nhiều thời gian để nói chuyện).</p>
+                        <p>To be honest, I phone my parents everyday, especially in the evenings. because after I’ve finished my homework, I have much time to talk to my family.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng thì tôi gọi điện cho bố mẹ mỗi ngày, đặc biệt là vào buổi tối, vì sau khi làm xong bài tập về nhà, tôi có nhiều thời gian để nói chuyện với gia đình.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What do you use emails for?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>use emails everyday</code> (dùng email mỗi ngày), <code>submitting assignments</code> (nộp bài tập), <code>sending documents</code> (gửi tài liệu), <code>applying my resume</code> (nộp hồ sơ xin việc).</p>
+                        <p>You know, as a second-year student I nearly use emails everyday for many responsibilities. because I use them for submitting assignments to my teachers and sending documents to my friends at school. Moreover, I also use emails for applying my resume for job applications.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, là một sinh viên năm hai, tôi gần như sử dụng email mỗi ngày cho nhiều nhiệm vụ, vì tôi dùng chúng để nộp bài tập cho giáo viên, gửi tài liệu cho bạn bè ở trường đến việc nộp hồ sơ xin việc.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you prefer to use computers or handwriting?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer using the computers</code> (thích dùng máy tính), <code>fast</code> (nhanh), <code>correct</code> (chính xác), <code>easy to check spelling mistakes</code> (dễ kiểm tra lỗi chính tả).</p>
+                        <p>I would say that, I prefer using the computers to writing by hand. because I find it fast, correct and easy to check spelling mistakes. Moreover, this is a good way to safeguard our environment from pollution.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi muốn nói rằng, tôi thích sử dụng máy tính hơn là viết bằng tay, vì tôi thấy nó nhanh chóng, chính xác và dễ dàng kiểm tra lỗi chính tả. Điều này cũng là một cách tốt để bảo vệ môi trường khỏi ô nhiễm.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-12">
+                <h2>Topic 12: Health (Sức khỏe)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What do you do to stay healthy or keep fit?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>play sports everyday</code> (chơi thể thao mỗi ngày), <code>eat fruits, vegetables</code> (ăn trái cây, rau củ), <code>go to bed before 10p.m</code> (ngủ trước 10h tối).</p>
+                        <p>In my opinion, there are many ways to stay healthy. Firstly, I think you should play sports everyday, particularly swimming. Moreover, it’s better if you eat fruits and vegetables, and go to bed before 10p.m.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Theo ý kiến của tôi, có nhiều cách để duy trì sức khỏe. Đầu tiên, tôi nghĩ bạn nên chơi thể thao hàng ngày, đặc biệt là bơi lội. Hơn nữa, sẽ tốt hơn nếu bạn ăn nhiều trái cây, rau củ và đi ngủ trước 22h.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Is it more important to eat healthy food than doing exercise?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>working out is much better</code> (tập luyện tốt hơn nhiều), <code>improve my health</code> (cải thiện sức khỏe), <code>lose weight</code> (giảm cân), <code>reduce stress</code> (giảm căng thẳng).</p>
+                        <p>I would say that although eating healthy food is a good idea, honestly speaking, working out is much better. because it allows me to improve my health and lose weight. Moreover, it helps to boost my immune system and reduce stress after school.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi muốn nói rằng, mặc dù việc ăn uống lành mạnh là ý tưởng tốt, nhưng thật lòng mà nói, tập luyện tốt hơn nhiều, vì nó giúp tôi cải thiện sức khỏe, giảm cân. Hơn nữa, nó giúp tăng cường hệ miễn dịch và giảm căng thẳng sau giờ học.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you do anything which is not good for your health?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>stay up late</code> (thức khuya), <code>drinking coffee</code> (uống cà phê), <code>keep my mind awake</code> (giữ tỉnh táo), <code>not very good for my health</code> (không tốt cho sức khỏe).</p>
+                        <p>Truthfully, I have a lot of assignments at school so I usually stay up late. And you know, drinking coffee is a top choice to keep my mind awake. Moreover, although I see it’s not very good for my health, I have no better choices.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thực sự, tôi có rất nhiều bài tập về nhà nên thường thức khuya. Và bạn biết đấy, uống cà phê là lựa chọn hàng đầu để giữ cho tinh thần tỉnh táo, mặc dù tôi biết đó không tốt cho sức khỏe, nhưng tôi không có lựa chọn tốt hơn.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-13">
+                <h2>Topic 13: Place of living (Nơi ở)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you live in a house or a flat/ an apartment?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>small house</code> (nhà nhỏ), <code>warm</code> (ấm cúng), <code>4 rooms</code> (4 phòng), <code>a small garden</code> (khu vườn nhỏ).</p>
+                        <p>To be honest, I've been living with my family in a small house but it's really warm. We have 4 rooms: a living room, 2 bedrooms, and a dining room. Moreover, there's a small garden filled with a lot of trees and flowers.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra tôi đã sống cùng gia đình trong một căn nhà nhỏ nhưng rất ấm cúng. Nhà của chúng tôi có 4 phòng: một phòng khách, 2 phòng ngủ, và một phòng ăn. Hơn nữa, nhà tôi còn có một khu vườn nhỏ đầy cây cối và hoa lá.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you want to change something about your current house?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>house is quite old</code> (nhà khá cũ), <code>renew my mom's bedroom</code> (sửa phòng mẹ), <code>buy a big sofa and a new TV</code> (mua sofa và TV mới).</p>
+                        <p>Truthfully, my house is quite old so there are many things I wanna change. Firstly, I will renew my mom's bedroom because she likes a vintage-style room. Moreover, I wanna buy a big sofa and a new TV to watch football matches with my Dad.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thực sự mà nói, nhà của tôi khá cũ nên có nhiều thứ tôi muốn thay đổi. Đầu tiên, tôi sẽ đổi mới phòng ngủ của mẹ tôi vì bà thích phong cách cổ điển. Hơn nữa, tôi muốn mua một chiếc sofa lớn và một chiếc TV mới để xem các trận bóng đá cùng bố.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you plan to live there in the future?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>continue staying here</code> (tiếp tục ở đây), <code>take care of my family</code> (chăm sóc gia đình), <code>wonderful place to come back</code> (nơi tuyệt vời để trở về), <code>save money</code> (tiết kiệm tiền).</p>
+                        <p>Yes, in the future, I will continue staying here. because I want to take care of my family. Moreover, this is a wonderful place to come back to after school and it helps me save money to pay the bills.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, trong tương lai, tôi sẽ tiếp tục ở đây, vì tôi muốn chăm sóc gia đình mình. Hơn nữa, đây là một nơi tuyệt vời để trở về sau giờ học và tiết kiệm tiền để trả hóa đơn.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-14">
+                <h2>Topic 14: Family relationships (Mối quan hệ gia đình)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you have a large or a small family?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>nuclear family</code> (gia đình hạt nhân), <code>of four</code> (bốn người), <code>parents are doctors</code> (bố mẹ là bác sĩ), <code>studying medicine</code> (học ngành Y).</p>
+                        <p>To be honest, I've been living in a nuclear family of four. My parents are both doctors, and my brother and I have been studying medicine at TVU as second-year students.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi đang sống trong một gia đình nhỏ gồm bốn người. Ba mẹ tôi đều là bác sĩ, còn tôi và em trai đều đang là sinh viên năm hai học Y khoa tại ĐH TV.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What do you usually do and share when your family gathers?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>family tradition</code> (truyền thống gia đình), <code>enjoying favorite food</code> (thưởng thức món ăn yêu thích), <code>watch The news at 7 p.m</code> (xem tin tức lúc 7h tối), <code>share and exchange opinions</code> (chia sẻ và trao đổi ý kiến).</p>
+                        <p>You know, my family tradition is enjoying favorite food and watching The news at 7 p.m. We do this to share and exchange opinions about events on a daily basis.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, truyền thống của gia đình tôi là thưởng thức món ăn yêu thích và xem tin tức lúc 7 giờ tối. Chúng tôi làm vậy để chia sẻ và trao đổi ý kiến về các sự kiện thường ngày.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Who is the closest person to you?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>closest one</code> (người thân nhất), <code>my Mom</code> (mẹ tôi), <code>stands by me</code> (ở bên cạnh tôi), <code>sacrifice her life</code> (hy sinh cuộc đời), <code>look like my father</code> (trông giống bố).</p>
+                        <p>When it comes to the closest one to me in my family, the person that springs to my mind is my Mom. because she always stands by me when I meet problems and has sacrificed her life for our whole family. Although, I have a similarity to my father in appearance.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Khi nói đến người thân nhất với tôi trong gia đình, người đầu tiên xuất hiện trong đầu tôi chính là mẹ tôi, vì bà luôn ở bên tôi khi tôi gặp khó khăn và đã hy sinh cả cuộc đời mình cho gia đình. Mặc dù vậy, về ngoại hình thì tôi trông giống bố của mình.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-15">
+                <h2>Topic 15: Pets (Thú cưng)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you like animals?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>love animals</code> (yêu động vật), <code>have a small Dove</code> (có một con chim bồ câu nhỏ), <code>named Lucky</code> (tên là Lucky).</p>
+                        <p>Yes, of course. My family really loves animals. We have a small Dove named Lucky, and it's 2 years old with a gorgeous feather.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tất nhiên rồi. Gia đình tôi rất yêu động vật. Chúng tôi có một con chim bồ câu nhỏ tên là Lucky, nó đã 2 tuổi và có bộ lông tuyệt đẹp.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What is your favourite bird?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>Dove</code> (bồ câu), <code>friendly</code> (thân thiện), <code>intelligent</code> (thông minh), <code>loyal</code> (trung thành), <code>symbol of peace</code> (biểu tượng của hòa bình).</p>
+                        <p>To be honest, my favourite bird is the Dove. Many people like it because it's friendly, intelligent and loyal. Moreover, it is the symbol of peace.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, loài chim yêu thích của tôi là bồ câu. Nhiều người thích nó vì nó thân thiện, thông minh và trung thành. Hơn nữa, nó còn là biểu tượng của hòa bình.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you think that a number of birds in your hometown are decreasing?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>in the past</code> (trong quá khứ), <code>different</code> (khác, đa dạng), <code>nowadays</code> (ngày nay), <code>no longer various</code> (không còn đa dạng), <code>hunted for commercial purposes</code> (bị săn bắt vì mục đích thương mại).</p>
+                        <p>Yes, I would say that. In the past, birds in my hometown were very different and various. However, nowadays they are no longer various because they are hunted for commercial purposes.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi đồng ý. Trong quá khứ, chim ở quê tôi rất đa dạng. Tuy nhiên, ngày nay chúng không còn đa dạng nữa vì bị săn bắn vì mục đích thương mại.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-16">
+                <h2>Topic 16: Sicknesses (Bệnh tật)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Have you ever got sick?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>sometimes meet sicknesses</code> (thỉnh thoảng bị bệnh), <code>weather changes</code> (thời tiết thay đổi), <code>work like a dog</code> (làm việc vất vả), <code>lack essential nutrients</code> (thiếu chất dinh dưỡng).</p>
+                        <p>Yes, I sometimes get sick. It often happens when the weather changes or I work like a dog all day long. Moreover, I may also lack essential nutrients because I have been on a diet for a long time.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, thỉnh thoảng tôi có bị ốm. Điều đó thường xảy ra khi thời tiết thay đổi hoặc khi tôi làm việc cật lực suốt cả ngày. Hơn nữa, tôi cũng có thể bị thiếu các dưỡng chất cần thiết do chế độ ăn kiêng kéo dài.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. How often do you go to the hospitals?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>seldom go to the doctor’s</code> (hiếm khi đi bác sĩ), <code>hectic schedule</code> (lịch trình bận rộn), <code>need an operation</code> (cần phẫu thuật), <code>serious symptoms</code> (triệu chứng nghiêm trọng).</p>
+                        <p>Honestly speaking, I seldom go to the doctor’s due to my hectic schedule. I only go to the clinic when I need an operation or deal with serious symptoms that I cannot buy medicine for in any drug stores.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi hiếm khi đến bác sĩ vì lịch trình bận rộn của mình. Tôi chỉ đến phòng khám khi cần phẫu thuật hoặc xử lý những triệu chứng nghiêm trọng mà tôi không thể tự mua thuốc ở các tiệm thuốc.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. What do you usually do to improve your health?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>play sports everyday</code> (chơi thể thao hàng ngày), <code>eat fruits, vegetables</code> (ăn trái cây, rau củ), <code>limit fast food</code> (hạn chế đồ ăn nhanh), <code>go to bed before 10p.m</code> (ngủ trước 10h tối).</p>
+                        <p>There are many useful ways to improve our health. Firstly, I think you should do light exercises and play sports everyday. Moreover, it’s better if you eat fruits and vegetables, as well as limit fast food and soft drinks.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Có nhiều cách hữu ích để cải thiện sức khỏe của chúng ta. Đầu tiên, tôi nghĩ bạn nên tập thể dục nhẹ nhàng và chơi thể thao mỗi ngày. Hơn nữa, sẽ tốt hơn nếu bạn ăn nhiều trái cây, rau củ, đồng thời hạn chế đồ ăn nhanh và đồ uống có ga.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-17">
+                <h2>Topic 17: Birthdays (Sinh nhật)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. When is your birthday?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>born on the 9th of September</code> (sinh ngày 9 tháng 9), <code>wonderful Autumn</code> (mùa thu tuyệt vời), <code>remember Mid-Autumn festivals</code> (nhớ lễ hội Trung Thu).</p>
+                        <p>To be honest, I was born on the 9th of September. You know, this is a wonderful Autumn that makes me remember Mid-Autumn festivals when I was young.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi sinh vào ngày 9 tháng 9. Bạn biết đấy, đó là một mùa thu tuyệt vời khiến tôi nhớ đến lễ hội Trung Thu khi còn nhỏ.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What do you usually do on this special day?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>decorate my party</code> (trang trí tiệc), <code>flowers</code> (hoa), <code>colorful lights</code> (đèn nhiều màu), <code>invite my friends</code> (mời bạn bè), <code>eat birthday cake</code> (ăn bánh sinh nhật).</p>
+                        <p>On my birthday, I usually decorate my party with flowers, beautiful pictures and colorful lights and balloons. Moreover, after that I invite my friends to my house to eat birthday cake and take part in other activities.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vào sinh nhật của mình, tôi thường trang trí bữa tiệc với hoa, những bức tranh đẹp, đèn nhiều màu và bóng bay. Hơn nữa, sau đó tôi mời bạn bè đến nhà để cùng ăn bánh sinh nhật và tham gia các hoạt động khác.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. How about people in your country, what are their popular activities on their birthdays?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>invite their friends at homes</code> (mời bạn bè đến nhà), <code>have fun together</code> (vui vẻ cùng nhau), <code>organize in luxurious restaurants</code> (tổ chức ở nhà hàng sang trọng).</p>
+                        <p>Like me, individuals in my country usually invite their friends to their homes to have fun together on their birthday celebration. Moreover, some like to organize parties in luxurious restaurants because it's convenient and roomy.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Giống như tôi, mọi người thường mời bạn bè đến nhà để có khoảng thời gian vui vẻ bên nhau trong ngày sinh nhật. Hơn nữa, một số khác lại thích tổ chức tại nhà hàng sang trọng vì nơi đó tiện nghi và rộng rãi.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-18">
+                <h2>Topic 18: Traffic (Giao thông)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What is your favourite vehicle?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>bikes</code> (xe đạp), <code>easy and convenient to move</code> (dễ và tiện di chuyển), <code>eco-friendly</code> (thân thiện môi trường), <code>cheap</code> (rẻ), <code>exercise</code> (tập thể dục).</p>
+                        <p>To be honest, I like bikes best. because It's extremely easy and convenient to move on small and narrow roads in rush hours. Moreover, this transport is eco-friendly and cheap so I can save a lot of money.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi thích xe đạp nhất, vì nó rất dễ dàng và tiện lợi để di chuyển trên những con đường nhỏ hẹp vào giờ cao điểm. Hơn nữa, phương tiện này thân thiện với môi trường và rẻ tiền nên tôi có thể tiết kiệm được rất nhiều tiền.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Can you drive (cars)?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>possess a driving skill</code> (có kỹ năng lái xe), <code>seldom use my car</code> (hiếm khi dùng ô tô), <code>house is near my school</code> (nhà gần trường).</p>
+                        <p>Yes, I possess a driving skill but I seldom use my car. because my house is near my school, so I usually ride my bike.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi có kỹ năng lái xe nhưng tôi hiếm khi sử dụng xe ô tô, vì nhà tôi gần trường học nên tôi thường đi xe đạp.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you wanna be a driver or a passenger when taking part in traffic?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer being a passenger</code> (thích làm hành khách), <code>do whatever I like</code> (làm bất cứ gì tôi thích), <code>reading books</code>, <code>listening to music</code>, <code>don't have any driving licences</code> (không có bằng lái xe).</p>
+                        <p>You know, I prefer being a passenger to being a driver. because I can do whatever I like such as reading books or listening to music. Additionally, one of the reasons is that I don't have any driving licences.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, tôi thích làm hành khách hơn là tài xế, vì tôi có thể làm bất cứ điều gì tôi thích như đọc sách, nghe nhạc hay ngắm cảnh. Thêm vào đó, một trong những lý do tôi thích làm hành khách là vì tôi không có bằng lái xe.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-19">
+                <h2>Topic 19: Festivals (Lễ hội)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What is the most famous traditional festival in your country?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>Tet holiday</code> (Tết), <code>Lunar New Year</code> (Tết Nguyên Đán), <code>most outstanding</code> (nổi bật nhất).</p>
+                        <p>To be honest, there're a lot of traditional festivals in VN but the most outstanding is Tet holiday that the Vietnamese calls Lunar New Year.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra có rất nhiều lễ hội truyền thống của Việt Nam, nhưng nổi bật nhất là lễ Tết, mà người Việt Nam gọi là Tết Nguyên Đán.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. When does it take place every year?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>takes place</code> (diễn ra), <code>first day of lunar calendar</code> (ngày đầu tiên của lịch âm).</p>
+                        <p>You know, this takes place on the first day of the lunar calendar.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, lễ hội này diễn ra vào ngày đầu tiên của năm mới theo lịch âm.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. What are popular activities?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>decorate our houses</code> (trang trí nhà), <code>visit grandparents</code> (thăm ông bà), <code>go to pagodas</code> (đi chùa).</p>
+                        <p>On Tet, we always decorate our houses with flowers and beautiful pictures. Moreover, on the first three days of Tet, people usually visit grandparents, relatives, and go to pagodas.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vào dịp Tết, chúng tôi luôn trang trí nhà cửa bằng hoa và những bức tranh đẹp. Hơn nữa, trong ba ngày đầu của Tết, mọi người thường đi thăm ông bà, họ hàng và đến chùa để cầu chúc những điều tốt lành cho gia đình mình.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-20">
+                <h2>Topic 20: Friends (Bạn bè)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Who is your best friend?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>a circle of friends</code> (một nhóm bạn), <code>best friend</code> (bạn thân nhất), <code>soulmate</code> (bạn tâm giao).</p>
+                        <p>To be honest, I have a circle of friends at school but John's my best friend.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi có một nhóm bạn ở trường, nhưng John là bạn thân nhất của tôi.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Tell me something about him?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>studying medicine</code> (học ngành Y), <code>swagger</code> (bảnh bao), <code>black hair</code> (tóc đen), <code>square face</code> (mặt chữ điền), <code>kind-hearted</code> (tốt bụng), <code>easy-going</code> (dễ gần).</p>
+                        <p>You know, we’ve been studying medicine at TV university as second-year students. He's really swagger with black hair and a square face. Moreover, everyone likes him because he's kind-hearted and easy-going.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, chúng tôi đều là sinh viên năm hai đang học Y khoa tại Đại học TV. Anh ấy rất bảnh bao với mái tóc đen và gương mặt chữ điền. Hơn nữa, mọi người đều thích cậu ấy vì tính hiền hòa và dễ gần của cậu ấy.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Do you think that friendship is important in your life and things you usually share with your friends?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>friendship is necessary</code> (tình bạn là cần thiết), <code>stand by me</code> (ở bên cạnh tôi), <code>share sorrows</code> (chia sẻ nỗi buồn), <code>give me a hand</code> (giúp đỡ tôi), <code>share knowledge</code> (chia sẻ kiến thức), <code>deepest secrets</code> (bí mật sâu kín nhất).</p>
+                        <p>In my viewpoint, friendship is really necessary in my life because when I feel down my friends always stand by me to share sorrows. Moreover, I would say that I usually share my knowledge, happiness, and my deepest secrets with my best friend.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Theo quan điểm của tôi, tình bạn thực sự cần thiết trong cuộc sống vì khi tôi buồn, bạn bè luôn ở bên cạnh để chia sẻ nỗi buồn. Hơn nữa, tôi thường chia sẻ kiến thức, niềm vui và đặc biệt là những bí mật sâu kín của mình với bạn thân.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-21">
+                <h2>Topic 21: Handicrafts (Đồ thủ công mỹ nghệ)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What is your favourite handicraft?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>Lanterns</code> (lồng đèn), <code>Non La</code> (nón lá), <code>reminding me my childhood</code> (gợi nhớ tuổi thơ), <code>symbolizes traditional cultures</code> (tượng trưng cho văn hóa truyền thống).</p>
+                        <p>Lanterns hold a special place in my heart, because they remind me of my childhood during Mid-Autumn festivals. Moreover, I have a profound fondness for Non La, as it symbolizes the traditional cultures of Vietnamese women.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Những chiếc lồng đèn chiếm một vị trí đặc biệt trong tim tôi, vì chúng gợi cho tôi nhớ về tuổi thơ trong những ngày lễ Trung thu. Hơn nữa, tôi có một tình cảm sâu sắc với Nón Lá, vì nó tượng trưng cho văn hóa truyền thống của phụ nữ Việt Nam.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Have you ever made handicrafts in your childhood?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>used to craft it</code> (đã từng làm nó), <code>when I was young</code> (khi tôi còn nhỏ), <code>busy like a bee</code> (bận rộn như ong), <code>no longer make it</code> (không còn làm nữa).</p>
+                        <p>Yes, I used to craft it when I was young. However, now I’m busy like a bee, so I no longer make it any more.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi từng tự tay làm nó khi còn nhỏ. Tuy nhiên, bây giờ tôi rất bận rộn nên không còn làm nữa.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Which handicrafts do the Vietnamese usually make?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>make lanterns and Non la</code> (làm lồng đèn và nón lá), <code>easy to make</code> (dễ làm), <code>materials are inexpensive</code> (nguyên liệu không đắt), <code>effortless to find</code> (dễ tìm).</p>
+                        <p>As I said, individuals in Vietnam usually like to make lanterns and Non la. because they think that these are easy to make. Moreover, the materials are not only inexpensive but also effortless to find.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Như tôi đã nói, người Việt Nam thường thích làm lồng đèn và Nón lá, vì họ cho rằng chúng dễ làm. Hơn nữa, nguyên vật liệu không chỉ rẻ mà còn dễ tìm.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-22">
+                <h2>Topic 22: Music (Âm nhạc)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What is your favourite music?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>traditional music</code> (nhạc truyền thống), <code>sense of pride</code> (niềm tự hào), <code>history and cultures of Vietnam</code> (lịch sử và văn hóa Việt Nam).</p>
+                        <p>To be honest, I’m a big fan of traditional music. because when I listen to it, I have a sense of pride in the history and cultures of Vietnam. Moreover, it helps me to recharge my batteries after work.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi rất thích nhạc truyền thống, vì khi nghe nó, tôi cảm thấy tự hào về lịch sử và văn hóa của Việt Nam. Hơn nữa, đây là cơ hội tốt giúp tôi lấy lại năng lượng sau giờ làm việc.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you think that music helps people in studying?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>improve English skills</code> (cải thiện kỹ năng tiếng Anh), <code>listening to English songs</code> (nghe nhạc tiếng Anh), <code>wonderful solutions</code> (giải pháp tuyệt vời).</p>
+                        <p>Yes, I do. I would say that for those who want to improve their English skills, listening to English songs everyday is one of the wonderful solutions.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi có nghĩ vậy. Tôi muốn nói rằng đối với những ai muốn cải thiện kỹ năng tiếng Anh, việc nghe nhạc tiếng Anh mỗi ngày là một trong những giải pháp tuyệt vời.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topic-23">
+                <h2>Topic 23: Cooking (Nấu ăn)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you like cooking?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>a great liking for cooking</code> (rất thích nấu ăn), <code>save a lot of money</code> (tiết kiệm nhiều tiền), <code>keep healthy</code> (giữ gìn sức khỏe).</p>
+                        <p>Let me see, I have a great liking for cooking. because it helps me to save a lot of money. Moreover, I can keep healthy by choosing organic products.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Để tôi xem nào, tôi rất thích nấu nướng, vì nó giúp tôi tiết kiệm được rất nhiều tiền. Hơn nữa, tôi có thể giữ gìn sức khỏe bằng cách chọn các sản phẩm hữu cơ.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you prefer eating at home or eating out?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer eating at home</code> (thích ăn ở nhà), <code>improve family relationships</code> (cải thiện quan hệ gia đình), <code>essential skill</code> (kỹ năng cần thiết).</p>
+                        <p>Of course, I prefer eating at home to eating out. because this is a good way to improve family relationships. Moreover, it is an extremely essential skill to live far away from home.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tất nhiên, tôi thích ăn ở nhà hơn là ăn ở ngoài, vì đây là cách tốt để cải thiện mối quan hệ trong gia đình. Hơn nữa, đó là một kỹ năng vô cùng quan trọng để sống xa nhà.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topic-24">
+                <h2>Topic 24: Reading books (Đọc sách)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. What kind of books do you usually read?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>read books anytime and anywhere</code> (đọc sách mọi lúc mọi nơi), <code>precious knowledge</code> (kiến thức quý giá), <code>recharge my batteries</code> (nạp lại năng lượng).</p>
+                        <p>To be honest, I read books anytime and anywhere. because I can study a number of precious knowledge from books. Moreover, this is a wonderful way to recharge my batteries after school.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật sự, tôi đọc sách mọi lúc mọi nơi, vì tôi có thể học được nhiều kiến thức quý giá từ sách. Hơn nữa, đây là một cách tuyệt vời để nạp lại năng lượng sau giờ học.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. Where is the greatest place to read a book?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>school library</code> (thư viện trường), <code>top choice</code> (lựa chọn hàng đầu), <code>extremely quiet</code> (cực kỳ yên tĩnh), <code>roomy</code> (rộng rãi), <code>various reading materials</code> (nhiều tài liệu đọc).</p>
+                        <p>In my opinion, the greatest place to read is the school library. I usually choose it as my top choice because this place is extremely quiet and roomy. Moreover, there are various reading materials.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Theo tôi, nơi tuyệt nhất để đọc sách là thư viện trường. Tôi thường chọn nó làm lựa chọn hàng đầu vì nơi đây rất yên tĩnh và rộng rãi. Hơn nữa, ở đó có rất nhiều tài liệu đọc đa dạng.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-25">
+                <h2>Topic 25: Watching TV (Xem TV)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. How often do you watch TV?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>busy like a bee</code> (bận rộn), <code>spend 2 hours watching</code> (dành 2 tiếng xem).</p>
+                        <p>To be honest, I’m really busy like a bee at school so I don’t have much time. However, I spend about 2 hours watching The news with my family every day.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật sự, tôi rất bận rộn ở trường nên không có nhiều thời gian cho các hoạt động thư giãn của mình. Tuy nhiên, mỗi ngày tôi đều dành khoảng 2 giờ để xem thời sự cùng gia đình.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. What is your favourite TV show?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>The news</code> (Thời sự), <code>develop knowledge</code> (phát triển kiến thức), <code>cultures, society</code> (văn hóa, xã hội).</p>
+                        <p>I would say that my favourite TV show is The news. because it's a good way to develop my knowledge about the world. Moreover, I can learn about cultures, society, habits and customs.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng chương trình TV yêu thích của tôi là Thời sự, vì đó là một cách tốt để phát triển kiến thức về thế giới. Hơn nữa, tôi có thể học về văn hóa, xã hội, phong tục và tập quán.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topic-26">
+                <h2>Topic 26: Weather (Thời tiết)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. How is the weather like in your hometown?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>tropical climate</code> (khí hậu nhiệt đới), <code>hot and humid</code> (nóng và ẩm), <code>all year round</code> (quanh năm).</p>
+                        <p>To be honest, my hometown has a tropical climate. I mean, It’s hot and humid all year round.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, quê tôi có khí hậu nhiệt đới. Ý tôi là, nơi đây nóng ẩm quanh năm.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What kind of weather do you like?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>summer</code> (mùa hè), <code>fantastic</code> (tuyệt vời), <code>my favourite</code> (yêu thích của tôi), <code>travel overseas</code> (du lịch nước ngoài), <code>take part in many outdoors</code> (tham gia nhiều hoạt động ngoài trời).</p>
+                        <p>You know, the summer in VN is extremely fantastic, and it's my favourite too. because I can have much time to travel overseas and take part in many outdoors activities.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Bạn biết đấy, mùa hè ở Việt Nam thật tuyệt vời, đó là mùa yêu thích của tôi, vì tôi có nhiều thời gian để đi du lịch nước ngoài và tham gia nhiều hoạt động ngoài trời.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-27">
+                <h2>Topic 27: Travelling by planes (Du lịch bằng máy bay)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. Do you think that travelling by planes has much more benefits than others?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>save much time</code> (tiết kiệm nhiều thời gian), <code>secure</code> (an toàn), <code>avoid bad weather, accidents</code> (tránh thời tiết xấu, tai nạn), <code>comfy feeling</code> (cảm giác thoải mái).</p>
+                        <p>Yes, I do. This tendency allows us to save much time. Moreover, It is extremely secure to travel by planes because we can avoid bad weather and accidents.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi có nghĩ vậy. Cách này giúp chúng ta tiết kiệm rất nhiều thời gian. Hơn nữa, việc đi máy bay rất an toàn vì chúng ta có thể tránh được thời tiết xấu và tai nạn.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. Tell me some ways to limit airsickness?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>try to sleep</code> (cố gắng ngủ), <code>read books</code>, <code>talk to your friends</code> (nói chuyện với bạn), <code>take medicine</code> (uống thuốc).</p>
+                        <p>There are a lot of ways to avoid problems on planes. Firstly, I think you should try to sleep during the trip. Moreover, it’s better if you read books or talk to your friends, and don’t forget to take medicine before you get on the plane.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Có một số cách để tránh các vấn đề trên chuyến bay. Đầu tiên, tôi nghĩ bạn nên cố gắng ngủ trong suốt chuyến đi. Hơn nữa, sẽ tốt hơn nếu bạn đọc sách hoặc nói chuyện với bạn bè, và cuối cùng, đừng quên uống thuốc trước khi lên máy bay.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-28">
+                <h2>Topic 28: Disadvantages of planes (Bất lợi của máy bay)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. What are the disadvantages of planes?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>expensive</code> (đắt đỏ), <code>costly</code> (tốn kém), <code>taking a lot of time</code> (mất nhiều thời gian), <code>checking in luggage</code> (làm thủ tục hành lý), <code>delayed</code> (bị hoãn), <code>environmental impact</code> (tác động môi trường).</p>
+                        <p>Using planes has some disadvantages. Firstly, it is quite expensive. Moreover, taking a lot of time for checking in luggage is a big problem, and it also has a negative environmental impact.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Sử dụng máy bay có một số bất lợi. Đầu tiên, nó khá đắt đỏ. Hơn nữa, việc mất nhiều thời gian để làm thủ tục hành lý là một vấn đề lớn, và nó cũng có tác động tiêu cực đến môi trường.</div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="topic-29">
+                <h2>Topic 29: Hobbies (Sở thích)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What do you like doing in your freetime?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>read books</code> (đọc sách), <code>studying precious things</code> (học những điều quý giá), <code>recharge my batteries</code> (nạp lại năng lượng).</p>
+                        <p>To be honest, I read books anytime and anywhere in my freetime, because I can study a number of precious things from them such as cultures and society. Moreover, this is a wonderful way to recharge my batteries after school.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi đọc sách mọi lúc mọi nơi vào thời gian rảnh, vì tôi có thể học được nhiều điều quý giá từ sách như văn hóa và xã hội. Hơn nữa, đây là một cách tuyệt vời để nạp lại năng lượng sau giờ học.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What kind of household chores do you usually do to help your family?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>household chores</code> (việc nhà), <code>cleaning the house</code> (dọn nhà), <code>doing the laundry</code> (giặt đồ), <code>watering my garden</code> (tưới vườn).</p>
+                        <p>When it comes to my household chores, I usually help my family with things like cleaning the house, doing the laundry or watering my garden.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Nói về việc nhà, tôi thường giúp gia đình những việc như dọn dẹp nhà cửa, giặt giũ hoặc tưới cây trong vườn.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. Are you pleased with your life?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>really happy</code> (rất hạnh phúc), <code>help my family</code> (giúp gia đình), <code>studying my favourite major</code> (học ngành yêu thích), <code>circle of friends</code> (nhóm bạn).</p>
+                        <p>Yes, I am. I’m really happy about my current life, because I have much time to help my family with household chores. Moreover, I’ve been studying my favourite major and I have a circle of friends who always give me a hand when I meet problems.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, đúng vậy. Tôi thực sự hài lòng về cuộc sống hiện tại của mình, vì tôi có nhiều thời gian để giúp đỡ gia đình làm việc nhà. Hơn nữa, tôi đang được học chuyên ngành yêu thích của mình và tôi có một nhóm bạn luôn sẵn sàng giúp đỡ khi tôi gặp khó khăn.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-30">
+                <h2>Topic 30: Meals (Bữa ăn)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you think that having breakfast is important?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>really important/ necessary</code> (thực sự quan trọng/ cần thiết), <code>provides us enough energy</code> (cung cấp đủ năng lượng), <code>reduce... problems for stomach</code> (giảm các vấn đề về dạ dày).</p>
+                        <p>Yes, I do. I would say that it’s really important and necessary to have breakfast, because it provides us enough energy for the whole day long. Moreover, it helps to reduce some serious problems for the stomach.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, tôi có nghĩ vậy. Tôi cho rằng việc ăn sáng thực sự quan trọng và cần thiết, vì nó cung cấp đủ năng lượng cho chúng ta suốt cả ngày dài. Hơn nữa, nó giúp giảm thiểu một số vấn đề nghiêm trọng về dạ dày.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you eat three meals a day?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>usually skip my breakfast</code> (thường bỏ bữa sáng), <code>get up... early bird</code> (dậy sớm), <code>limit... dinner after 6 p.m</code> (hạn chế ăn tối sau 6h).</p>
+                        <p>Honestly speaking, I don't eat three meals a day, because I usually skip my breakfast as I hardly get up like an early bird. Moreover, I limit having dinner after 6 p.m because I don’t want to gain weight.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi không ăn đủ ba bữa một ngày, vì tôi thường bỏ bữa sáng do tôi khó dậy sớm. Hơn nữa, tôi hạn chế ăn tối sau 6 giờ chiều vì không muốn tăng cân.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">3. What is your favourite meal of the day and with whom?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>lunchtime</code> (bữa trưa), <code>with my family</code> (với gia đình), <code>improve family relationships</code> (cải thiện quan hệ gia đình), <code>share many things</code> (chia sẻ nhiều điều).</p>
+                        <p>I would say that my favourite meal is lunchtime with my family. because it's a good way to improve family relationships. Moreover, I can share many things with my parents on a daily basis.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng bữa ăn yêu thích của tôi là bữa trưa cùng gia đình, vì đó là một cách tốt để cải thiện mối quan hệ gia đình. Hơn nữa, tôi có thể chia sẻ nhiều điều với bố mẹ hàng ngày.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-31">
+                <h2>Topic 31: Shopping (Mua sắm)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. Do you like shopping?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>big fan of shopping</code> (rất thích mua sắm), <code>super markets or shopping malls</code> (siêu thị hoặc trung tâm mua sắm), <code>atmosphere is cool and fresh</code> (không khí mát mẻ và trong lành).</p>
+                        <p>That’s a good question. I’m a big fan of going shopping, especially in super markets or shopping malls, because the atmosphere there is really cool and fresh. Moreover, customers are really polite and never smoke there.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Đó là một câu hỏi hay. Tôi rất thích đi mua sắm, đặc biệt là ở siêu thị hoặc trung tâm mua sắm, vì không khí ở đó thật mát mẻ và trong lành. Hơn nữa, khách hàng ở đây rất lịch sự và không bao giờ hút thuốc.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you like shopping online?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prioritize buying</code> (ưu tiên mua), <code>clothes and skincare products</code> (quần áo và sản phẩm chăm sóc da), <code>web-based marketplaces</code> (sàn thương mại điện tử), <code>avoid adverse weather conditions</code> (tránh điều kiện thời tiết xấu).</p>
+                        <p>Yes, I do. I usually prioritize buying clothes and skincare products on web-based marketplaces like Shopee or Tiktok, because this helps me to avoid adverse weather conditions.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Vâng, có chứ. Tôi thường ưu tiên mua quần áo và sản phẩm chăm sóc da trên các nền tảng thương mại điện tử như Shopee hoặc Tiktok, vì điều này giúp tôi tránh được những điều kiện thời tiết xấu.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topic-32">
+                <h2>Topic 32: Fastfood (Thức ăn nhanh)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you like fast food?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>crazy about junk food</code> (mê đồ ăn vặt), <code>Banh Mi</code>, <code>delicious, nutricious and cheap</code> (ngon, bổ và rẻ), <code>convenient to take away</code> (tiện lợi mang đi).</p>
+                        <p>Honestly speaking, I’m crazy about junk food, especially Banh Mì, because I find it delicious, nutricious and cheap so I can save a sum of money. Moreover, it’s convenient to take away with a cup of coffee every busy morning.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thành thật mà nói, tôi rất thích đồ ăn nhanh, đặc biệt là Bánh Mì, vì tôi thấy nó ngon, bổ dưỡng và rẻ nên tôi có thể tiết kiệm được một khoản tiền. Hơn nữa, nó rất tiện để mang đi cùng với một ly cà phê vào những buổi sáng bận rộn.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What are disadvantages of fast food?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>contains a lot of fats and sugar</code> (chứa nhiều chất béo và đường), <code>causes obesity</code> (gây béo phì), <code>lots of preservation</code> (nhiều chất bảo quản), <code>not good for us</code> (không tốt cho chúng ta).</p>
+                        <p>However, fast food has many disadvantages. It contains a lot of fats and sugar that causes obesity and other related diseases. Moreover, refined food is usually stored for a long time with lots of preservation so it is not good for us if using it in a long time.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tuy nhiên, đồ ăn nhanh có nhiều bất lợi. Nó chứa nhiều chất béo và đường, là nguyên nhân gây béo phì và các bệnh liên quan khác. Hơn nữa, đồ ăn chế biến sẵn thường được bảo quản lâu dài với nhiều chất bảo quản, điều này không tốt cho sức khỏe nếu sử dụng trong thời gian dài.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-33">
+                <h2>Topic 33: Drinks (Đồ uống)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Do you like ice-cream or coffee?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>big fan of ice-cream</code> (rất thích kem), <code>feel cooler</code> (cảm thấy mát hơn), <code>like coffee</code> (thích cà phê), <code>stay awake</code> (giữ tỉnh táo), <code>stimulate my creativity</code> (kích thích sáng tạo).</p>
+                        <p>To be honest, I’m a big fan of ice-cream because it helps me feel cooler in the summer. Moreover, I also like coffee as it makes me stay awake and stimulates my creativity.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thành thật mà nói, tôi rất thích ăn kem vì nó giúp tôi cảm thấy mát mẻ hơn vào mùa hè. Tôi cũng thích uống cà phê vì nó giúp tôi tỉnh táo và kích thích sự sáng tạo của tôi.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Why do many people choose coffee shops to unwind at weekends?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>cozy and relaxed atmosphere</code> (không khí ấm cúng và thư giãn), <code>wide range of beverages</code> (nhiều loại đồ uống), <code>meet friends</code> (gặp gỡ bạn bè), <code>ideal place to unwind</code> (nơi lý tưởng để thư giãn).</p>
+                        <p>I think people choose coffee shops to unwind because they often offer a cozy and relaxed atmosphere with a wide range of beverages. Moreover, it is a good place to meet friends and have conversations, making it an ideal place to unwind and socialize.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi nghĩ mọi người chọn quán cà phê để thư giãn vì chúng thường mang đến không khí ấm cúng và thư giãn với đa dạng thức uống. Hơn nữa, đây là nơi tốt để gặp gỡ bạn bè, trò chuyện, khiến chúng trở thành điểm đến lý tưởng để thư giãn và giao tiếp xã hội.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-34">
+                <h2>Topic 34: Flowers (Hoa)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. Why do people often give flowers on birthdays?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>meaningful present</code> (món quà ý nghĩa), <code>keep great memories</code> (lưu giữ kỷ niệm đẹp), <code>easy to buy</code> (dễ mua), <code>not too expensive</code> (không quá đắt).</p>
+                        <p>People often give flowers because it is a meaningful present for this special occasion, and we can take a lot of photos to keep great memories. Moreover, It’s easy to buy and not too expensive.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Mọi người thường tặng hoa vì đó là món quà ý nghĩa cho dịp đặc biệt này, và chúng ta có thể chụp rất nhiều bức ảnh để lưu giữ những kỷ niệm tuyệt vời. Hơn nữa, mua hoa rất dễ dàng và không quá đắt.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Why do some people not like flowers?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>difficult to preserve</code> (khó bảo quản), <code>harmful chemicals</code> (hóa chất độc hại), <code>pesticides</code> (thuốc trừ sâu), <code>adverse effects on our health</code> (ảnh hưởng xấu đến sức khỏe).</p>
+                        <p>Some people do not like flowers because they seem difficult to preserve for an extended period. Moreover, in some cases, harmful chemicals or pesticides are used to keep the flowers fresher, which may have adverse effects on our health.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Một số người không thích hoa vì chúng dường như khó bảo quản trong thời gian dài. Hơn nữa, trong một số trường hợp, các chất hóa học độc hại hoặc thuốc trừ sâu được sử dụng để giữ cho hoa tươi lâu hơn có thể gây ra tác động tiêu cực đối với sức khỏe của chúng ta.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-35">
+                <h2>Topic 35: Friends (Bạn bè - Lần 2)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Who is your best friend?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>a circle of friends</code> (một nhóm bạn), <code>John's best friend</code> (John là bạn thân nhất), <code>studying medicine</code> (học ngành Y), <code>kind-hearted</code> (tốt bụng), <code>easy-going</code> (dễ gần).</p>
+                        <p>To be honest, I have a circle of friends at school but John's my best friend. You know, we’ve been studying medicine at TV university as second-year students. Everyone likes him because he's kind-hearted and easy-going.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, tôi có một nhóm bạn ở trường, nhưng John là bạn thân nhất của tôi. Bạn biết đấy, chúng tôi đều là sinh viên năm hai, ngành Y tại Đại học TV. Mọi người đều thích anh ấy vì anh ấy tốt bụng và dễ gần.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. What do you often do with your friends?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>play volleyball</code> (chơi bóng chuyền), <code>do the shopping</code> (mua sắm), <code>buy necessary things</code> (mua những thứ cần thiết), <code>read books</code> (đọc sách).</p>
+                        <p>I often do many things with my friends. We usually play volleyball together in stadiums. Moreover, we also do the shopping in super markets to buy necessary things, and at weekends we sometimes read books in the school library.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi thường làm nhiều việc với bạn bè. Chúng tôi thường chơi bóng chuyền cùng nhau ở sân vận động. Hơn nữa, chúng tôi cũng đi mua sắm ở siêu thị để mua những thứ cần thiết, và vào cuối tuần, chúng tôi đôi khi đọc sách tại thư viện của trường.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-36">
+                <h2>Topic 36: Films (Phim ảnh)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Who is your favourite actress?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>big fan of</code> (fan hâm mộ của), <code>Ngọc Trinh</code>, <code>famous actress</code> (nữ diễn viên nổi tiếng), <code>beautiful/gorgeous</code> (xinh đẹp/lộng lẫy), <code>easy-going</code> (dễ gần), <code>kind-hearted</code> (tốt bụng).</p>
+                        <p>There are a number of celebrities in VN, but I’m a big fan of Ngọc Trinh, who is a famous actress. Although she’s around 30 years old, she’s extremely beautiful. Moreover, she’s easy-going and kind-hearted.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Ở Việt Nam có rất nhiều người nổi tiếng, nhưng tôi là fan cứng của Ngọc Trinh, một nữ diễn viên nổi tiếng. Mặc dù đã gần 30 tuổi, cô ấy vẫn vô cùng xinh đẹp. Hơn nữa, cô ấy thân thiện và tốt bụng.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Is the film industry in your country developed?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>highly recommended</code> (được đánh giá cao), <code>international film festivals</code> (liên hoan phim quốc tế), <code>quite developed</code> (khá phát triển).</p>
+                        <p>I would say that the film industry in my country is quite developed. because I used to watch a number of Vietnamese films like 'Hai Phuong' or 'Bo Gia' which are highly recommended at many international film festivals.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Tôi sẽ nói rằng ngành công nghiệp điện ảnh của đất nước tôi phát triển khá mạnh mẽ, vì tôi đã xem nhiều bộ phim Việt Nam như 'Hai Phượng' hay 'Bố Già' được đánh giá rất cao tại nhiều Liên hoan phim quốc tế.</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="topic-37">
+                <h2>Topic 37: Living far away from home (Sống xa nhà)</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. What are the disadvantages of living away far from home?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>pay money for rental</code> (trả tiền thuê nhà), <code>encounter a sense of isolation/loneliness</code> (đối mặt với cảm giác cô lập/cô đơn), <code>lack driving skills</code> (thiếu kỹ năng lái xe).</p>
+                        <p>There are many problems of living in a new place. Firstly, you must pay much money for rental. Moreover, you will encounter a sense of isolation or loneliness, and it can be inconvenient to travel if you lack driving skills.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Có nhiều vấn đề khi sinh sống ở một nơi mới. Đầu tiên, bạn phải chi nhiều tiền cho việc thuê nhà. Hơn nữa, bạn sẽ phải đối mặt với cảm giác cô đơn, và việc đi lại sẽ bất tiện nếu bạn thiếu kỹ năng lái xe.</div>
+                    </div>
+                </div>
+                 <div class="qa-item">
+                    <div class="qa-question">2. What is the most important skill to live in a new country?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>cooking</code>, <code>most necessary skill</code> (kỹ năng cần thiết nhất), <code>live independently</code> (sống độc lập).</p>
+                        <p>In my opinion, cooking is the most necessary skill for individuals to live independently, because it helps you save a lot of money and control what you eat for better health.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Theo quan điểm của tôi, nấu ăn là kỹ năng cần thiết nhất để mọi người sống độc lập, vì nó giúp bạn tiết kiệm nhiều tiền và kiểm soát những gì bạn ăn để có sức khỏe tốt hơn.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-38">
+                <h2>Topic 38: Why women wait until 30 to get married?</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. Why do women wait until they are 30 years old to get married?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>stay with their family</code> (ở bên gia đình), <code>do whatever they like</code> (làm bất cứ điều gì họ thích), <code>studying languages</code> (học ngoại ngữ), <code>travelling around the world</code> (du lịch khắp thế giới), <code>save money for their futures</code> (tiết kiệm cho tương lai).</p>
+                        <p>There are a lot of reasons why many women don’t want to get married before 30. Firstly, they want to take much time to stay with their family. Moreover, they can do whatever they like such as studying languages or travelling around the world. Finally, they have many chances to save money for their futures.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Có rất nhiều lý do vì sao nhiều phụ nữ không muốn kết hôn trước 30 tuổi. Thứ nhất, họ muốn dành nhiều thời gian hơn để ở bên gia đình. Hơn nữa, họ có thể làm bất cứ điều gì mình thích như học ngoại ngữ hay đi du lịch khắp thế giới. Cuối cùng, họ có nhiều cơ hội để tiết kiệm tiền cho tương lai.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-39">
+                <h2>Topic 39: How to keep calm in your exams</h2>
+                 <div class="qa-item">
+                    <div class="qa-question">1. How do you keep calm in your exams?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>stay calm</code> (giữ bình tĩnh), <code>deep breathing exercises</code> (bài tập hít thở sâu), <code>calm your nerves</code> (làm dịu thần kinh), <code>allocate time wisely</code> (phân bổ thời gian khôn ngoan), <code>prevent rushing</code> (tránh vội vàng).</p>
+                        <p>To be honest, there are a lot of ways to stay calm in exams. Firstly, I think you should practice deep breathing exercises to help calm your nerves. Moreover, it's advisable to allocate time wisely during the exams to prevent rushing.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật ra, có nhiều cách để giữ bình tĩnh trong kỳ thi. Đầu tiên, tôi nghĩ bạn nên thực hiện các bài tập hít thở sâu để giúp làm dịu thần kinh. Hơn nữa, bạn nên phân bổ thời gian một cách khôn ngoan trong suốt kỳ thi để tránh vội vàng.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-40">
+                <h2>Topic 40: Daily routines (Thói quen hàng ngày)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. Are you a night person or a morning person?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>night owl</code> (cú đêm), <code>early bird</code> (người dậy sớm), <code>daily routines take up at 5 o’clock</code> (lịch trình hàng ngày bắt đầu lúc 5h).</p>
+                        <p>Although many people think I’m a night owl, I’m make sure that I’m an early bird, because my daily routines take up at 5 o’clock. Moreover, after waking up, I like to do exercise to warm up my new day.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Mặc dù nhiều người nghĩ rằng tôi là một cú đêm, nhưng tôi chắc chắn rằng tôi là một người dậy sớm, vì lịch trình hàng ngày của tôi bắt đầu từ 5 giờ sáng. Hơn nữa, sau khi thức dậy, tôi thích tập thể dục để khởi động một ngày mới.</div>
+                    </div>
+                </div>
+                <div class="qa-item">
+                    <div class="qa-question">2. Do you like working in a group or working alone?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>prefer collaborating with a group</code> (thích hợp tác với nhóm), <code>working independently</code> (làm việc độc lập), <code>exchange and expand knowledge</code> (trao đổi và mở rộng kiến thức), <code>friends consistently give me a hand</code> (bạn bè luôn giúp đỡ).</p>
+                        <p>To be honest, I prefer collaborating with a larger group to working independently. because It offers an excellent opportunity to exchange and expand knowledge on various subjects. Furthermore, when I encounter challenges, my friends consistently give me a hand.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Thật lòng mà nói, tôi thích hợp tác với một nhóm lớn hơn là làm việc độc lập, vì điều này cung cấp cơ hội tuyệt vời để trao đổi và mở mang kiến thức về các chủ đề khác nhau. Hơn nữa, khi tôi gặp khó khăn thách thức, bạn bè của tôi luôn sẵn sàng giúp đỡ tôi.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="topic-41">
+                <h2>Topic 41: Benefits of retirement (Lợi ích của việc nghỉ hưu)</h2>
+                <div class="qa-item">
+                    <div class="qa-question">1. What are the benefits of retirement?</div>
+                    <div class="qa-answer">
+                        <p class="keywords"><strong>Từ cần học thuộc:</strong> <code>a sum of money</code> (một khoản tiền), <code>buy a lot of things</code> (mua nhiều thứ), <code>without working like a dog</code> (mà không cần làm việc vất vả), <code>much time to do whatever we like</code> (nhiều thời gian làm điều mình thích), <code>look after grandchildren</code> (chăm sóc cháu).</p>
+                        <p>There are a lot of benefits of retirement. Firstly, we have a sum of money to buy a lot of things such as food or clothes without working like a dog all day long. Moreover, we have much time to do whatever we like, including travelling overseas or giving a hand to look after grandchildren.</p>
+                        <div class="translation"><strong>Bản dịch tham khảo:</strong> Có rất nhiều lợi ích khi nghỉ hưu. Đầu tiên, chúng ta có một số tiền để mua nhiều thứ như thực phẩm, quần áo... mà không cần làm việc bận rộn cả ngày. Hơn nữa, chúng ta có nhiều thời gian để làm những gì chúng ta thích bao gồm du lịch nước ngoài hoặc phụ giúp chăm sóc cháu.</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Accordion functionality
+            document.querySelectorAll('.qa-question').forEach(button => {
+                button.addEventListener('click', () => {
+                    const answer = button.nextElementSibling;
+                    button.classList.toggle('active');
+
+                    if (answer.style.display === 'block') {
+                        answer.style.display = 'none';
+                    } else {
+                        answer.style.display = 'block';
+                    }
+                });
+            });
+
+            // Active link highlighting on scroll
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.sidebar ul li a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-topic');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-topic');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+
+</body>
+</html>
